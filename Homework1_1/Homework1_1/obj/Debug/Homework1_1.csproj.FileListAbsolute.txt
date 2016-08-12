@@ -1,0 +1,5 @@
+c:\users\aky\documents\visual studio 2015\Projects\Homework1_1\Homework1_1\bin\Debug\Homework1_1.exe.config
+c:\users\aky\documents\visual studio 2015\Projects\Homework1_1\Homework1_1\bin\Debug\Homework1_1.exe
+c:\users\aky\documents\visual studio 2015\Projects\Homework1_1\Homework1_1\bin\Debug\Homework1_1.pdb
+c:\users\aky\documents\visual studio 2015\Projects\Homework1_1\Homework1_1\obj\Debug\Homework1_1.exe
+c:\users\aky\documents\visual studio 2015\Projects\Homework1_1\Homework1_1\obj\Debug\Homework1_1.pdb
