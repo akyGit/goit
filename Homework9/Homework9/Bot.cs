@@ -30,6 +30,8 @@ namespace Homework9 {
         public abstract void WhatIsYourName();
         public abstract void NiceToMeetYou();
 
+        public abstract String GetByePhase();
+
         public String Name { get; set; }
     }
 }

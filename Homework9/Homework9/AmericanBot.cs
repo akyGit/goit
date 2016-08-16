@@ -37,7 +37,7 @@ namespace Homework9 {
         }
 
         public override void WhateverPhrase() {
-            Console.WriteLine("Why the refrigerator is not cold?");
+            Console.WriteLine("Maybe something will tell?");
         }
 
         public override void MyNameIs() {
@@ -50,6 +50,10 @@ namespace Homework9 {
 
         public override void NiceToMeetYou() {
             Console.WriteLine("Nice to meet you");
+        }
+
+        public override String GetByePhase() {
+            return "bye";
         }
     }
 }

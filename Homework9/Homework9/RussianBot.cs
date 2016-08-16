@@ -33,7 +33,7 @@ namespace Homework9 {
         }
 
         public override void WhateverPhrase() {
-            Console.WriteLine("Почему спать нужно ночью?");
+            Console.WriteLine("Может что-то розкажешь?");
         }
 
         public override void ItsGood() {
@@ -50,6 +50,10 @@ namespace Homework9 {
 
         public override void NiceToMeetYou() {
             Console.WriteLine("Рад с тобой познакомиться");
+        }
+
+        public override String GetByePhase() {
+            return "пока";
         }
     }
 }

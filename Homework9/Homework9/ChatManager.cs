@@ -12,34 +12,37 @@ using System.Threading.Tasks;
 
 namespace Homework9 {
     class ChatManager {
-        public ChatManager() {
-            ukrBot = new UkrainianBot();
-            rusBot = new RussianBot();
-            usaBot = new AmericanBot();
-        }
+        enum Nationality { UKR = 1, RUS, USA };
+
+        public ChatManager() { }
 
         public void StartChat() {
             Bot bot = null;
 
             Console.WriteLine("Please, choose language: ");
-            Console.WriteLine(" 1.] Ukrainian");
-            Console.WriteLine(" 2.] Russian");
-            Console.WriteLine(" 3.] English");
+            Console.WriteLine(" {0}.] Ukrainian", (Int32)Nationality.UKR);
+            Console.WriteLine(" {0}.] Russian",   (Int32)Nationality.RUS);
+            Console.WriteLine(" {0}.] English",   (Int32)Nationality.USA);
 
             #region selection of bot nationality (switch)
-            switch (Tools.DisplayInviteAndGetValidNumber("Make your choice: ", 
-                1, 3)) {
-                case 1:
-                    bot = ukrBot;
+            switch (
+                (Nationality)Tools.DisplayInviteAndGetValidNumber(
+                    "Make your choice: ",
+                    (Int32)Nationality.UKR, 
+                    (Int32)Nationality.USA
+                )
+            ) {
+                case Nationality.UKR:
+                    bot = new UkrainianBot();
                     break;
-                case 2:
-                    bot = rusBot;
+                case Nationality.RUS:
+                    bot = new RussianBot();
                     break;
-                case 3:
-                    bot = usaBot;
+                case Nationality.USA:
+                    bot = new AmericanBot();
                     break;
                 default:
-                    bot = usaBot;
+                    bot = new AmericanBot();
                     break;
             }
             #endregion
@@ -58,14 +61,22 @@ namespace Homework9 {
             bot.NiceToMeetYou();
             bot.HowAreYou();
             InputImitation();
-
             bot.ItsGood();
-            bot.WhateverPhrase();
-            InputImitation();
 
-            bot.DontUnderstand();
+            LittleBitInteractivity(bot);
+
             bot.Bye();
             InputImitation();
+        }
+
+        private void LittleBitInteractivity(Bot bot) {
+            String byePhrase = bot.GetByePhase();
+
+            bot.WhateverPhrase();
+            while (UserInput().ToLower() != byePhrase.ToLower()) {
+                bot.DontUnderstand();
+                bot.WhateverPhrase();
+            }
         }
 
         private void InputImitation() {
@@ -73,8 +84,9 @@ namespace Homework9 {
             Console.ReadLine();
         }
 
-        private UkrainianBot ukrBot;
-        private RussianBot   rusBot;
-        private AmericanBot  usaBot;
+        private String UserInput() {
+            Console.Write("> ");
+            return Console.ReadLine();
+        }
     }
 }

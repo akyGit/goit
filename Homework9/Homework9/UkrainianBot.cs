@@ -37,7 +37,7 @@ namespace Homework9 {
         }
 
         public override void WhateverPhrase() {
-            Console.WriteLine("Чи можна спати коли бiгаєш?");
+            Console.WriteLine("Щось розкажеш?");
         }
 
         public override void MyNameIs() {
@@ -50,6 +50,10 @@ namespace Homework9 {
 
         public override void NiceToMeetYou() {
             Console.WriteLine("Радий з тобою познайомитись");
+        }
+
+        public override String GetByePhase() {
+            return "бувай";
         }
     }
 }
