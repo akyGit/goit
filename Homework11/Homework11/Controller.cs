@@ -50,7 +50,7 @@ namespace Homework11 {
             WriteToFile writer = new WriteToFile(streamGetter);
 
             if (isDigit)
-                new SquareDecorator(writer).Write(userInput, toFile);
+                new NumberSquareNumberDecorator(writer).Write(userInput, toFile);
             else
                 writer.Write(userInput, toFile);
         }
