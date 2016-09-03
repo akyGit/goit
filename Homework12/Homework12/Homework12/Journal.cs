@@ -66,6 +66,6 @@ namespace Homework12 {
             ShowMarksByStartingAge(Int32.MinValue);
         }
 
-        private List<Pupil> _pupils = new List<Pupil>();
+        private List<Pupil> _pupils;
     }
 }
